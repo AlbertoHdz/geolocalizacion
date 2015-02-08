@@ -16,13 +16,11 @@ function cargar(){
 }
 	function onDeviceReady() {
 		// Register the event listener
-		document.addEventListener("backbutton",onBackButton,false);
+		//document.addEventListener("backbutton",onBackButton,false);
 		//document.getElementById("ingreso").innerHTML += "<br> nueva linea";  // Agrego nueva linea antes
 	}
 	
-	function onBackButton(){
-		alert("saliendo de la aplicación");
-	}
+	
 </script>
     </head>
     <body style="background:rgba(110,77,170,0.5)" onload=cargar();>
@@ -40,7 +38,7 @@ function mostrarUbicacion(position) {
     var altitud = position.coords.altitude;	
 	var exactitud = position.coords.accuracy;	
 	var div = document.getElementById("ubicacion");
-	div.innerHTML ="Latitud: " + latitud + "<br>Longitud: " + longitud + "<br>Altura en metros: " + altitud;
+	div.innerHTML ="Tu ubicacion es:<br>Latitud: " + latitud + "<br>Longitud: " + longitud + "<br>Altura en metros: " + altitud;
 	}	
 function refrescarUbicacion() {	
 	navigator.geolocation.watchPosition(mostrarUbicacion);}	
@@ -63,7 +61,7 @@ function showPosition(position)
   mapholder.style.width='100%';
   var myOptions={
   center:latlon,zoom:10,
-  mapTypeId:google.maps.MapTypeId.HYBRID,
+  mapTypeId:google.maps.MapTypeId.SATELLITE,
   mapTypeControl:false,
   navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
   };
