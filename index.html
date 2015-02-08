@@ -38,7 +38,7 @@ function mostrarUbicacion(position) {
     var altitud = position.coords.altitude;	
 	var exactitud = position.coords.accuracy;	
 	var div = document.getElementById("ubicacion");
-	div.innerHTML ="Tu ubicacion es:<br>Latitud: " + latitud + "<br>Longitud: " + longitud + "<br>Altura en metros: " + altitud;
+	div.innerHTML ="Tu ubicacion es:<br>Latitud: " + latitud + "<br>Longitud: " + longitud;
 	}	
 function refrescarUbicacion() {	
 	navigator.geolocation.watchPosition(mostrarUbicacion);}	
@@ -57,8 +57,8 @@ function showPosition(position)
   lon=position.coords.longitude;
   latlon=new google.maps.LatLng(lat, lon)
   mapholder=document.getElementById('mapholder')
-  mapholder.style.height='90%';
-  mapholder.style.width='90%';
+  mapholder.style.height='300px';
+  mapholder.style.width='300px';
   var myOptions={
   center:latlon,zoom:10,
   mapTypeId:google.maps.MapTypeId.SATELLITE,
