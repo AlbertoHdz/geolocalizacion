@@ -46,7 +46,7 @@ function refrescarUbicacion() {
 </script>
 
 <div id="seleccion"></div>
-<div id="mapholder" style="height=100%;width:100%;"></div>
+<div id="mapholder" style="height=100%;width:100%;background:#CBA;"></div>
 
 <script type="text/javascript">
 var x=document.getElementById("seleccion");
@@ -58,8 +58,8 @@ function showPosition(position)
   lon=position.coords.longitude;
   latlon=new google.maps.LatLng(lat, lon)
   mapholder=document.getElementById('mapholder')
-  //mapholder.style.height='300px';
-  //mapholder.style.width='300px';
+  mapholder.style.height='340px';
+  mapholder.style.width='320px';
   var myOptions={
   center:latlon,zoom:10,
   mapTypeId:google.maps.MapTypeId.HYBRID,
