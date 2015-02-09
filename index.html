@@ -41,11 +41,12 @@ function mostrarUbicacion(position) {
 	div.innerHTML ="Tu ubicacion es:<br>Latitud: " + latitud + "<br>Longitud: " + longitud;
 	}	
 function refrescarUbicacion() {	
-	navigator.geolocation.watchPosition(mostrarUbicacion);}	
+	navigator.geolocation.watchPosition(mostrarUbicacion);
+	}	
 </script>
 
 <div id="seleccion"></div>
-<div id="mapholder"></div>
+<div id="mapholder" style="height=100%;width:100%;"></div>
 
 <script type="text/javascript">
 var x=document.getElementById("seleccion");
@@ -57,11 +58,11 @@ function showPosition(position)
   lon=position.coords.longitude;
   latlon=new google.maps.LatLng(lat, lon)
   mapholder=document.getElementById('mapholder')
-  mapholder.style.height='300px';
-  mapholder.style.width='300px';
+  //mapholder.style.height='300px';
+  //mapholder.style.width='300px';
   var myOptions={
   center:latlon,zoom:10,
-  mapTypeId:google.maps.MapTypeId.SATELLITE,
+  mapTypeId:google.maps.MapTypeId.HYBRID,
   mapTypeControl:false,
   navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
   };
